@@ -1,0 +1,13 @@
+venv
+.venv/
+.env
+env/
+__pycache__/
+*.pyc
+*.pyo
+.git/
+.gitignore
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
