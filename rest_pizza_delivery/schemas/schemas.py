@@ -1,5 +1,9 @@
 from pydantic import BaseModel
 from typing import Optional
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 
 class SignUpModel(BaseModel):
@@ -20,3 +24,12 @@ class SignUpModel(BaseModel):
                 'is_active': True
             }
         }
+
+
+class Settings(BaseModel):
+    auth_jwt_secret_key: str = os.getenv('JWT_KEY')
+
+
+class LoginModel(BaseModel):
+    username: str
+    password: str
