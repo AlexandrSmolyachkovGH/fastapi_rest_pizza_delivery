@@ -2,6 +2,7 @@ FROM python:3.10
 
 WORKDIR /pizza_app
 
+ENV PYTHONPATH=/pizza_app
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
@@ -15,9 +16,9 @@ RUN pip install --no-cache-dir poetry
 
 RUN poetry config virtualenvs.create false && poetry install --no-dev --no-interaction --no-ansi
 
-COPY . .
+RUN pip install bcrypt==3.2.0
 
-RUN poetry show sqlalchemy
+COPY . .
 
 
 

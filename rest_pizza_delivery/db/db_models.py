@@ -1,4 +1,4 @@
-from db_config import Base
+from rest_pizza_delivery.db.db_config import Base
 from sqlalchemy import Column, Integer, Boolean, Text, String, ForeignKey
 from sqlalchemy_utils.types import ChoiceType
 from sqlalchemy.orm import relationship
